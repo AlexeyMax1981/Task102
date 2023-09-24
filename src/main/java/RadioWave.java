@@ -1,6 +1,14 @@
 public class RadioWave {
-    public int numberRadio;
+    private int numberRadio;
     public int valueRadio;
+    public int quantityRadio=10;
+    public RadioWave(int quantityRadio){
+        this.quantityRadio=quantityRadio;
+    }
+    public RadioWave(){
+
+    }
+
 
     public int getNumberRadio() {
 
@@ -11,14 +19,14 @@ public class RadioWave {
         if (newNumberRadio < 0) {
             return;
         }
-        if (newNumberRadio > 9) {
+        if (newNumberRadio > quantityRadio-1) {
             return;
         }
         numberRadio = newNumberRadio;
     }
 
     public void next() {
-        if (numberRadio == 9) {
+        if (numberRadio ==quantityRadio-1) {
             numberRadio = 0;
         } else {
             numberRadio++;
@@ -27,7 +35,7 @@ public class RadioWave {
 
     public void prev() {
         if (numberRadio == 0) {
-            numberRadio = 9;
+            numberRadio = quantityRadio-1;
         } else {
             numberRadio--;
         }
@@ -38,7 +46,6 @@ public class RadioWave {
             return;
         }
         valueRadio++;
-        System.out.println(valueRadio);
     }
 
     public void decreaseValue() {
@@ -46,7 +53,6 @@ public class RadioWave {
             return;
         }
         valueRadio--;
-        System.out.println(valueRadio);
     }
 
     /*public void setValue(int newValueRadio){
