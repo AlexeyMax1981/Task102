@@ -14,8 +14,8 @@ public class RadioWaveTest {
     }
     @Test
     public void shouldSetNext(){
-        RadioWave radioWave=new RadioWave();
-        radioWave.setNumberRadio(17);
+        RadioWave radioWave=new RadioWave(16);
+        radioWave.setNumberRadio(-14);
         radioWave.next();
         int expected= 1;
         int actual=radioWave.getNumberRadio();
@@ -69,9 +69,9 @@ public class RadioWaveTest {
     @Test
     public void shouldSetPrev(){
         RadioWave radioWave=new RadioWave();
-        radioWave.setNumberRadio(8);
+        radioWave.setNumberRadio(9);
         radioWave.prev();
-        int expected= 7;
+        int expected= 8;
         int actual=radioWave.getNumberRadio();
         Assertions.assertEquals(expected,actual);
 
@@ -94,4 +94,5 @@ public class RadioWaveTest {
         int actual=radioWave.getValueRadio();
         Assertions.assertEquals(expected,actual);
     }
+
 }
